@@ -1,0 +1,13 @@
+{
+  "invalidCredentials": [
+    { "email": "nonexistent.user@mailinator.com", "password": "SeleniumQA@123", "scenario": "Unregistered email with valid-format password" },
+    { "email": "selenium.qa.demo01@mailinator.com", "password": "WrongPass@999", "scenario": "Registered email with wrong password" },
+    { "email": "not-an-email", "password": "SeleniumQA@123", "scenario": "Malformed email address" },
+    { "email": "selenium.qa.demo01@mailinator.com", "password": "123", "scenario": "Too-short password" },
+    { "email": "SELENIUM.QA.DEMO01@MAILINATOR.COM", "password": "wrongCase@123", "scenario": "Uppercase email with wrong password" }
+  ],
+  "signupCandidates": [
+    { "name": "QA Auto Tester", "email": "qa.auto.tester.new@mailinator.com" },
+    { "name": "Regression Bot", "email": "regression.bot.new@mailinator.com" }
+  ]
+}

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<!--
+  Lightweight smoke suite - runs only the small set of @Test methods tagged
+  "smoke" across every module. Intended for fast CI checks on every commit.
+
+  Usage:
+    mvn test -DsuiteXmlFile=testng-smoke.xml
+-->
+<suite name="EcommerceSmokeSuite" verbose="1">
+
+    <listeners>
+        <listener class-name="com.ecommerce.automation.listeners.TestListener"/>
+    </listeners>
+
+    <test name="SmokeTests">
+        <groups>
+            <run>
+                <include name="smoke"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.ecommerce.automation.tests.LoginTests"/>
+            <class name="com.ecommerce.automation.tests.CartTests"/>
+            <class name="com.ecommerce.automation.tests.CheckoutTests"/>
+            <class name="com.ecommerce.automation.tests.PaymentTests"/>
+        </classes>
+    </test>
+
+</suite>

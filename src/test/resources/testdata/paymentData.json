@@ -1,0 +1,18 @@
+{
+  "invalidCardDetails": [
+    { "nameOnCard": "",              "cardNumber": "4111111111111111", "cvc": "123", "expiryMonth": "12", "expiryYear": "2030", "scenario": "Missing name on card" },
+    { "nameOnCard": "QA Test User",  "cardNumber": "",                 "cvc": "123", "expiryMonth": "12", "expiryYear": "2030", "scenario": "Missing card number" },
+    { "nameOnCard": "QA Test User",  "cardNumber": "4111ABCD11111111","cvc": "123", "expiryMonth": "12", "expiryYear": "2030", "scenario": "Alphabetic characters in card number" },
+    { "nameOnCard": "QA Test User",  "cardNumber": "4111111111111111", "cvc": "",   "expiryMonth": "12", "expiryYear": "2030", "scenario": "Missing CVC" },
+    { "nameOnCard": "QA Test User",  "cardNumber": "4111111111111111", "cvc": "1",  "expiryMonth": "12", "expiryYear": "2030", "scenario": "CVC too short" },
+    { "nameOnCard": "QA Test User",  "cardNumber": "4111111111111111", "cvc": "123","expiryMonth": "",   "expiryYear": "2030", "scenario": "Missing expiry month" },
+    { "nameOnCard": "QA Test User",  "cardNumber": "4111111111111111", "cvc": "123","expiryMonth": "12", "expiryYear": "",     "scenario": "Missing expiry year" }
+  ],
+  "validCardDetails": {
+    "nameOnCard": "QA Automation Tester",
+    "cardNumber": "4111111111111111",
+    "cvc": "123",
+    "expiryMonth": "12",
+    "expiryYear": "2030"
+  }
+}

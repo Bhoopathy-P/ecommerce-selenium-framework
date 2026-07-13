@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<!--
+  Main regression suite for the E-Commerce Selenium Automation Framework.
+
+  Usage:
+    mvn test                              -> runs this file, all groups
+    mvn test -Dgroups=smoke               -> runs only @Test methods tagged "smoke"
+    mvn test -Dgroups=regression          -> runs only @Test methods tagged "regression"
+    mvn test -Dgroups=sanity              -> runs only @Test methods tagged "sanity"
+    mvn test -Dbrowser=firefox            -> runs against Firefox instead of Chrome
+    mvn test -DsuiteXmlFile=testng-smoke.xml -> runs the dedicated smoke suite file
+-->
+<suite name="EcommerceAutomationSuite" verbose="1" parallel="classes" thread-count="2">
+
+    <!-- Registers the ExtentReports + screenshot-on-failure listener for every test in this suite -->
+    <listeners>
+        <listener class-name="com.ecommerce.automation.listeners.TestListener"/>
+    </listeners>
+
+    <test name="LoginModuleTests">
+        <classes>
+            <class name="com.ecommerce.automation.tests.LoginTests"/>
+        </classes>
+    </test>
+
+    <test name="CartModuleTests">
+        <classes>
+            <class name="com.ecommerce.automation.tests.CartTests"/>
+        </classes>
+    </test>
+
+    <test name="CheckoutModuleTests">
+        <classes>
+            <class name="com.ecommerce.automation.tests.CheckoutTests"/>
+        </classes>
+    </test>
+
+    <test name="PaymentModuleTests">
+        <classes>
+            <class name="com.ecommerce.automation.tests.PaymentTests"/>
+        </classes>
+    </test>
+
+</suite>
